@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d0d0d;
+  color: #00ff99;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: #111;
+  border-bottom: 2px solid #00ff99;
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #00ff99;
+  transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar .active {
+  color: #ff0099;
+}
+
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px 20px;
+}
+
+.btn {
+  background: #00ff99;
+  color: #111;
+  padding: 10px 20px;
+  border: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ff0099;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+footer {
+  background: #111;
+  border-top: 2px solid #00ff99;
+  padding: 15px;
+  font-size: 10px;
+}
+
+.content {
+  padding: 60px 20px;
+  line-height: 1.8;
+}
+
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #111;
+  border: 2px solid #00ff99;
+  padding: 20px;
+  width: 280px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  border-color: #ff0099;
+}
+
+
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.04) 0px,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 2px,
+    transparent 3px
+  );
+  opacity: 0.08; /* Intesidad muy leve */
+  z-index: 9999;
+  animation: flicker 0.12s infinite;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 0.08;
+  }
+  20%, 24%, 55% {
+    opacity: 0.05;
+  }
+}
+
+/* Glow sutil para texto */
+h1, h2, h3, p, a, li, span {
+  text-shadow: 0 0 3px #00ff99, 0 0 6px rgba(0, 255, 153, 0.3);
+}
+
+
+
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+h1::after, h2::after, h3::after {
+  content: "_";
+  animation: blink 1s infinite;
+  margin-left: 5px;
+  color: #00ff99;
+}
+
+
+/* ===== Enlaces dentro de las tarjetas (Proyectos) ===== */
+.projects-container a {
+  text-decoration: none; /* Quita el subrayado */
+  color: inherit;        /* Hereda el color del texto dentro del card */
+}
+
+.projects-container a:visited,
+.projects-container a:hover,
+.projects-container a:focus,
+.projects-container a:active {
+  color: inherit;         /* Mantiene el mismo color siempre */
+  text-decoration: none;  /* Evita subrayado en cualquier estado */
+  outline: none;          /* Quita el borde de enfoque */
+}
+
+/* ===== Enlaces de la sección de Contacto ===== */
+.content a {
+  color: #00ff99;          /* verde retro */
+  text-decoration: none;   /* sin subrayado */
+  transition: color 0.3s;  /* transición suave */
+}
+
+.content a:hover,
+.content a:focus,
+.content a:active {
+  color: #ff0099;          /* rosado neón al pasar el mouse */
+  text-decoration: none;
+  outline: none;
+}
+
+
